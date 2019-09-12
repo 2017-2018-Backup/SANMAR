@@ -1,0 +1,11 @@
+D:\KKM\Visitor App\iOS\Apns-Sharp-1.0.3.0-Source\Apns-Sharp-1.0.3.0\apns-sharp\JdSoft.Apple.Apns.Notifications\bin\Debug\JdSoft.Apns.Notifications.dll
+D:\KKM\Visitor App\iOS\Apns-Sharp-1.0.3.0-Source\Apns-Sharp-1.0.3.0\apns-sharp\JdSoft.Apple.Apns.Notifications\bin\Debug\JdSoft.Apns.Notifications.pdb
+D:\KKM\Visitor App\iOS\Apns-Sharp-1.0.3.0-Source\Apns-Sharp-1.0.3.0\apns-sharp\JdSoft.Apple.Apns.Notifications\bin\Debug\Newtonsoft.Json.Compact.dll
+D:\KKM\Visitor App\iOS\Apns-Sharp-1.0.3.0-Source\Apns-Sharp-1.0.3.0\apns-sharp\JdSoft.Apple.Apns.Notifications\obj\Debug\JdSoft.Apple.Apns.Notifications.csprojResolveAssemblyReference.cache
+D:\KKM\Visitor App\iOS\Apns-Sharp-1.0.3.0-Source\Apns-Sharp-1.0.3.0\apns-sharp\JdSoft.Apple.Apns.Notifications\obj\Debug\JdSoft.Apns.Notifications.dll
+D:\KKM\Visitor App\iOS\Apns-Sharp-1.0.3.0-Source\Apns-Sharp-1.0.3.0\apns-sharp\JdSoft.Apple.Apns.Notifications\obj\Debug\JdSoft.Apns.Notifications.pdb
+D:\KKM\Visitor App\VisitorAppointment Complete Code 07042017\JdSoft.Apple.Apns.Notifications\bin\Debug\JdSoft.Apns.Notifications.dll
+D:\KKM\Visitor App\VisitorAppointment Complete Code 07042017\JdSoft.Apple.Apns.Notifications\bin\Debug\JdSoft.Apns.Notifications.pdb
+D:\KKM\Visitor App\VisitorAppointment Complete Code 07042017\JdSoft.Apple.Apns.Notifications\obj\Debug\JdSoft.Apns.Notifications.dll
+D:\KKM\Visitor App\VisitorAppointment Complete Code 07042017\JdSoft.Apple.Apns.Notifications\obj\Debug\JdSoft.Apns.Notifications.pdb
+D:\KKM\Visitor App\VisitorAppointment Complete Code 07042017\JdSoft.Apple.Apns.Notifications\obj\Debug\JdSoft.Apple.Apns.Notifications.csprojResolveAssemblyReference.cache

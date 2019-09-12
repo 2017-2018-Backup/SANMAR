@@ -1,0 +1,9 @@
+D:\KKM\Visitor App\SanmarWebservice\WebServiceTestMachine\bin\Debug\WebServiceTestMachine.exe.config
+D:\KKM\Visitor App\SanmarWebservice\WebServiceTestMachine\bin\Debug\WebServiceTestMachine.exe
+D:\KKM\Visitor App\SanmarWebservice\WebServiceTestMachine\bin\Debug\WebServiceTestMachine.pdb
+D:\KKM\Visitor App\SanmarWebservice\WebServiceTestMachine\obj\Debug\WebServiceTestMachine.Form1.resources
+D:\KKM\Visitor App\SanmarWebservice\WebServiceTestMachine\obj\Debug\WebServiceTestMachine.Properties.Resources.resources
+D:\KKM\Visitor App\SanmarWebservice\WebServiceTestMachine\obj\Debug\WebServiceTestMachine.csproj.GenerateResource.Cache
+D:\KKM\Visitor App\SanmarWebservice\WebServiceTestMachine\obj\Debug\WebServiceTestMachine.exe
+D:\KKM\Visitor App\SanmarWebservice\WebServiceTestMachine\obj\Debug\WebServiceTestMachine.pdb
+D:\KKM\Visitor App\SanmarWebservice\WebServiceTestMachine\obj\Debug\WebServiceTestMachine.csprojResolveAssemblyReference.cache

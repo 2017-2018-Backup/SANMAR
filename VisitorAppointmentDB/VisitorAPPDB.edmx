@@ -1,0 +1,499 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="VisitorAPPModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="VisitorAPPModelStoreContainer">
+          <EntitySet Name="BadgeDetails" EntityType="VisitorAPPModel.Store.BadgeDetails" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="InfoMessage" EntityType="VisitorAPPModel.Store.InfoMessage" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="InfoUser" EntityType="VisitorAPPModel.Store.InfoUser" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SettingsForm" EntityType="VisitorAPPModel.Store.SettingsForm" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TypeMsgContent" EntityType="VisitorAPPModel.Store.TypeMsgContent" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TypeMsgStatus" EntityType="VisitorAPPModel.Store.TypeMsgStatus" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TypeUserRole" EntityType="VisitorAPPModel.Store.TypeUserRole" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_InfoUser_TypeUserRole" Association="VisitorAPPModel.Store.FK_InfoUser_TypeUserRole">
+            <End Role="TypeUserRole" EntitySet="TypeUserRole" />
+            <End Role="InfoUser" EntitySet="InfoUser" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InfoUserFrom_InfoMessage" Association="VisitorAPPModel.Store.FK_InfoUserFrom_InfoMessage">
+            <End Role="InfoUser" EntitySet="InfoUser" />
+            <End Role="InfoMessage" EntitySet="InfoMessage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InfoUserTo_InfoMessage" Association="VisitorAPPModel.Store.FK_InfoUserTo_InfoMessage">
+            <End Role="InfoUser" EntitySet="InfoUser" />
+            <End Role="InfoMessage" EntitySet="InfoMessage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TypeMsgContent_InfoMessage" Association="VisitorAPPModel.Store.FK_TypeMsgContent_InfoMessage">
+            <End Role="TypeMsgContent" EntitySet="TypeMsgContent" />
+            <End Role="InfoMessage" EntitySet="InfoMessage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TypeMsgStatus_msgStatus" Association="VisitorAPPModel.Store.FK_TypeMsgStatus_msgStatus">
+            <End Role="TypeMsgStatus" EntitySet="TypeMsgStatus" />
+            <End Role="InfoMessage" EntitySet="InfoMessage" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="BadgeDetails">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="LastOpenTime" Type="datetime" />
+          <Property Name="LastCloseTime" Type="datetime" />
+          <Property Name="BadgeCount" Type="int" />
+        </EntityType>
+        <EntityType Name="InfoMessage">
+          <Key>
+            <PropertyRef Name="msgID" />
+          </Key>
+          <Property Name="msgID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TodayID" Type="int" />
+          <Property Name="FromUserID" Type="int" Nullable="false" />
+          <Property Name="ToUserID" Type="int" Nullable="false" />
+          <Property Name="CreatedDateTime" Type="smalldatetime" Nullable="false" />
+          <Property Name="msgTypeID" Type="tinyint" Nullable="false" />
+          <Property Name="VisitorName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="VisitorMessage" Type="nvarchar" MaxLength="100" />
+          <Property Name="isUrgent" Type="bit" Nullable="false" />
+          <Property Name="msgStatusID" Type="tinyint" Nullable="false" />
+          <Property Name="ResponseString" Type="varchar" MaxLength="50" />
+          <Property Name="ResponseTime" Type="smalldatetime" />
+          <Property Name="isActive" Type="bit" Nullable="false" />
+          <Property Name="Autotime" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="InfoUser">
+          <Key>
+            <PropertyRef Name="UID" />
+          </Key>
+          <Property Name="UID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserRoleID" Type="tinyint" Nullable="false" />
+          <Property Name="Username" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="MobileNo" Type="varchar" MaxLength="50" />
+          <Property Name="EmailID" Type="varchar" MaxLength="50" />
+          <Property Name="SystemIDAddress" Type="nvarchar" MaxLength="20" />
+          <Property Name="MobileIMENo" Type="nvarchar" MaxLength="100" />
+          <Property Name="isActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SettingsForm">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="SettingsName" Type="nvarchar" MaxLength="150" />
+          <Property Name="Enable" Type="bit" />
+        </EntityType>
+        <EntityType Name="TypeMsgContent">
+          <Key>
+            <PropertyRef Name="MsgTypeId" />
+          </Key>
+          <Property Name="MsgTypeId" Type="tinyint" Nullable="false" />
+          <Property Name="MessageContent" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="isActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TypeMsgStatus">
+          <Key>
+            <PropertyRef Name="msgStatusID" />
+          </Key>
+          <Property Name="msgStatusID" Type="tinyint" Nullable="false" />
+          <Property Name="msgStatusDesc" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="isActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TypeUserRole">
+          <Key>
+            <PropertyRef Name="UserRoleID" />
+          </Key>
+          <Property Name="UserRoleID" Type="tinyint" Nullable="false" />
+          <Property Name="UserRoleDesc" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="UserMenuAccess" Type="nvarchar" MaxLength="500" />
+          <Property Name="isActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_InfoUser_TypeUserRole">
+          <End Role="TypeUserRole" Type="VisitorAPPModel.Store.TypeUserRole" Multiplicity="1" />
+          <End Role="InfoUser" Type="VisitorAPPModel.Store.InfoUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeUserRole">
+              <PropertyRef Name="UserRoleID" />
+            </Principal>
+            <Dependent Role="InfoUser">
+              <PropertyRef Name="UserRoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InfoUserFrom_InfoMessage">
+          <End Role="InfoUser" Type="VisitorAPPModel.Store.InfoUser" Multiplicity="1" />
+          <End Role="InfoMessage" Type="VisitorAPPModel.Store.InfoMessage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InfoUser">
+              <PropertyRef Name="UID" />
+            </Principal>
+            <Dependent Role="InfoMessage">
+              <PropertyRef Name="FromUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InfoUserTo_InfoMessage">
+          <End Role="InfoUser" Type="VisitorAPPModel.Store.InfoUser" Multiplicity="1" />
+          <End Role="InfoMessage" Type="VisitorAPPModel.Store.InfoMessage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InfoUser">
+              <PropertyRef Name="UID" />
+            </Principal>
+            <Dependent Role="InfoMessage">
+              <PropertyRef Name="ToUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TypeMsgContent_InfoMessage">
+          <End Role="TypeMsgContent" Type="VisitorAPPModel.Store.TypeMsgContent" Multiplicity="1" />
+          <End Role="InfoMessage" Type="VisitorAPPModel.Store.InfoMessage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeMsgContent">
+              <PropertyRef Name="MsgTypeId" />
+            </Principal>
+            <Dependent Role="InfoMessage">
+              <PropertyRef Name="msgTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TypeMsgStatus_msgStatus">
+          <End Role="TypeMsgStatus" Type="VisitorAPPModel.Store.TypeMsgStatus" Multiplicity="1" />
+          <End Role="InfoMessage" Type="VisitorAPPModel.Store.InfoMessage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeMsgStatus">
+              <PropertyRef Name="msgStatusID" />
+            </Principal>
+            <Dependent Role="InfoMessage">
+              <PropertyRef Name="msgStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="VisitorAPPModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="VisitorAPPEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="InfoUsers" EntityType="VisitorAPPModel.InfoUser" />
+          <EntitySet Name="TypeMsgContents" EntityType="VisitorAPPModel.TypeMsgContent" />
+          <EntitySet Name="TypeMsgStatus" EntityType="VisitorAPPModel.TypeMsgStatu" />
+          <EntitySet Name="TypeUserRoles" EntityType="VisitorAPPModel.TypeUserRole" />
+          <AssociationSet Name="FK_InfoUser_TypeUserRole" Association="VisitorAPPModel.FK_InfoUser_TypeUserRole">
+            <End Role="TypeUserRole" EntitySet="TypeUserRoles" />
+            <End Role="InfoUser" EntitySet="InfoUsers" />
+          </AssociationSet>
+          <EntitySet Name="InfoMessages" EntityType="VisitorAPPModel.InfoMessage" />
+          <AssociationSet Name="FK_InfoUserFrom_InfoMessage" Association="VisitorAPPModel.FK_InfoUserFrom_InfoMessage">
+            <End Role="InfoUser" EntitySet="InfoUsers" />
+            <End Role="InfoMessage" EntitySet="InfoMessages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InfoUserTo_InfoMessage" Association="VisitorAPPModel.FK_InfoUserTo_InfoMessage">
+            <End Role="InfoUser" EntitySet="InfoUsers" />
+            <End Role="InfoMessage" EntitySet="InfoMessages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TypeMsgContent_InfoMessage" Association="VisitorAPPModel.FK_TypeMsgContent_InfoMessage">
+            <End Role="TypeMsgContent" EntitySet="TypeMsgContents" />
+            <End Role="InfoMessage" EntitySet="InfoMessages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TypeMsgStatus_msgStatus" Association="VisitorAPPModel.FK_TypeMsgStatus_msgStatus">
+            <End Role="TypeMsgStatu" EntitySet="TypeMsgStatus" />
+            <End Role="InfoMessage" EntitySet="InfoMessages" />
+          </AssociationSet>
+          <EntitySet Name="BadgeDetails" EntityType="VisitorAPPModel.BadgeDetail" />
+          <EntitySet Name="SettingsForms" EntityType="VisitorAPPModel.SettingsForm" />
+        </EntityContainer>
+        <EntityType Name="InfoUser">
+          <Key>
+            <PropertyRef Name="UID" />
+          </Key>
+          <Property Name="UID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserRoleID" Type="Byte" Nullable="false" />
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="MobileNo" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="EmailID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="SystemIDAddress" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="MobileIMENo" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="isActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="TypeUserRole" Relationship="VisitorAPPModel.FK_InfoUser_TypeUserRole" FromRole="InfoUser" ToRole="TypeUserRole" />
+          <NavigationProperty Name="InfoMessages" Relationship="VisitorAPPModel.FK_InfoUserFrom_InfoMessage" FromRole="InfoUser" ToRole="InfoMessage" />
+          <NavigationProperty Name="InfoMessages1" Relationship="VisitorAPPModel.FK_InfoUserTo_InfoMessage" FromRole="InfoUser" ToRole="InfoMessage" />
+        </EntityType>
+        <EntityType Name="TypeMsgContent">
+          <Key>
+            <PropertyRef Name="MsgTypeId" />
+          </Key>
+          <Property Name="MsgTypeId" Type="Byte" Nullable="false" />
+          <Property Name="MessageContent" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="isActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="InfoMessages" Relationship="VisitorAPPModel.FK_TypeMsgContent_InfoMessage" FromRole="TypeMsgContent" ToRole="InfoMessage" />
+        </EntityType>
+        <EntityType Name="TypeMsgStatu">
+          <Key>
+            <PropertyRef Name="msgStatusID" />
+          </Key>
+          <Property Name="msgStatusID" Type="Byte" Nullable="false" />
+          <Property Name="msgStatusDesc" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="isActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="InfoMessages" Relationship="VisitorAPPModel.FK_TypeMsgStatus_msgStatus" FromRole="TypeMsgStatu" ToRole="InfoMessage" />
+        </EntityType>
+        <EntityType Name="TypeUserRole">
+          <Key>
+            <PropertyRef Name="UserRoleID" />
+          </Key>
+          <Property Name="UserRoleID" Type="Byte" Nullable="false" />
+          <Property Name="UserRoleDesc" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="isActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="InfoUsers" Relationship="VisitorAPPModel.FK_InfoUser_TypeUserRole" FromRole="TypeUserRole" ToRole="InfoUser" />
+          <Property Type="String" Name="UserMenuAccess" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_InfoUser_TypeUserRole">
+          <End Role="TypeUserRole" Type="VisitorAPPModel.TypeUserRole" Multiplicity="1" />
+          <End Role="InfoUser" Type="VisitorAPPModel.InfoUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeUserRole">
+              <PropertyRef Name="UserRoleID" />
+            </Principal>
+            <Dependent Role="InfoUser">
+              <PropertyRef Name="UserRoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="InfoMessage">
+          <Key>
+            <PropertyRef Name="msgID" />
+          </Key>
+          <Property Type="Int64" Name="msgID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="TodayID" />
+          <Property Type="Int32" Name="FromUserID" Nullable="false" />
+          <Property Type="Int32" Name="ToUserID" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedDateTime" Nullable="false" Precision="0" />
+          <Property Type="Byte" Name="msgTypeID" Nullable="false" />
+          <Property Type="String" Name="VisitorName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="VisitorMessage" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="isUrgent" Nullable="false" />
+          <Property Type="Byte" Name="msgStatusID" Nullable="false" />
+          <Property Type="Boolean" Name="isActive" Nullable="false" />
+          <NavigationProperty Name="InfoUser" Relationship="VisitorAPPModel.FK_InfoUserFrom_InfoMessage" FromRole="InfoMessage" ToRole="InfoUser" />
+          <NavigationProperty Name="InfoUser1" Relationship="VisitorAPPModel.FK_InfoUserTo_InfoMessage" FromRole="InfoMessage" ToRole="InfoUser" />
+          <NavigationProperty Name="TypeMsgContent" Relationship="VisitorAPPModel.FK_TypeMsgContent_InfoMessage" FromRole="InfoMessage" ToRole="TypeMsgContent" />
+          <NavigationProperty Name="TypeMsgStatu" Relationship="VisitorAPPModel.FK_TypeMsgStatus_msgStatus" FromRole="InfoMessage" ToRole="TypeMsgStatu" />
+          <Property Type="String" Name="ResponseString" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="ResponseTime" Precision="0" />
+          <Property Type="DateTime" Name="Autotime" Precision="0" />
+        </EntityType>
+        <Association Name="FK_InfoUserFrom_InfoMessage">
+          <End Type="VisitorAPPModel.InfoUser" Role="InfoUser" Multiplicity="1" />
+          <End Type="VisitorAPPModel.InfoMessage" Role="InfoMessage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InfoUser">
+              <PropertyRef Name="UID" />
+            </Principal>
+            <Dependent Role="InfoMessage">
+              <PropertyRef Name="FromUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InfoUserTo_InfoMessage">
+          <End Type="VisitorAPPModel.InfoUser" Role="InfoUser" Multiplicity="1" />
+          <End Type="VisitorAPPModel.InfoMessage" Role="InfoMessage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InfoUser">
+              <PropertyRef Name="UID" />
+            </Principal>
+            <Dependent Role="InfoMessage">
+              <PropertyRef Name="ToUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TypeMsgContent_InfoMessage">
+          <End Type="VisitorAPPModel.TypeMsgContent" Role="TypeMsgContent" Multiplicity="1" />
+          <End Type="VisitorAPPModel.InfoMessage" Role="InfoMessage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeMsgContent">
+              <PropertyRef Name="MsgTypeId" />
+            </Principal>
+            <Dependent Role="InfoMessage">
+              <PropertyRef Name="msgTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TypeMsgStatus_msgStatus">
+          <End Type="VisitorAPPModel.TypeMsgStatu" Role="TypeMsgStatu" Multiplicity="1" />
+          <End Type="VisitorAPPModel.InfoMessage" Role="InfoMessage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeMsgStatu">
+              <PropertyRef Name="msgStatusID" />
+            </Principal>
+            <Dependent Role="InfoMessage">
+              <PropertyRef Name="msgStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="BadgeDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="UserID" />
+          <Property Type="DateTime" Name="LastOpenTime" Precision="3" />
+          <Property Type="DateTime" Name="LastCloseTime" Precision="3" />
+          <Property Type="Int32" Name="BadgeCount" />
+        </EntityType>
+        <EntityType Name="SettingsForm">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="UserID" />
+          <Property Type="String" Name="SettingsName" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Enable" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="VisitorAPPModelStoreContainer" CdmEntityContainer="VisitorAPPEntities">
+          <EntitySetMapping Name="InfoUsers">
+            <EntityTypeMapping TypeName="VisitorAPPModel.InfoUser">
+              <MappingFragment StoreEntitySet="InfoUser">
+                <ScalarProperty Name="UID" ColumnName="UID" />
+                <ScalarProperty Name="UserRoleID" ColumnName="UserRoleID" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="SystemIDAddress" ColumnName="SystemIDAddress" />
+                <ScalarProperty Name="MobileIMENo" ColumnName="MobileIMENo" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypeMsgContents">
+            <EntityTypeMapping TypeName="VisitorAPPModel.TypeMsgContent">
+              <MappingFragment StoreEntitySet="TypeMsgContent">
+                <ScalarProperty Name="MsgTypeId" ColumnName="MsgTypeId" />
+                <ScalarProperty Name="MessageContent" ColumnName="MessageContent" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypeMsgStatus">
+            <EntityTypeMapping TypeName="VisitorAPPModel.TypeMsgStatu">
+              <MappingFragment StoreEntitySet="TypeMsgStatus">
+                <ScalarProperty Name="msgStatusID" ColumnName="msgStatusID" />
+                <ScalarProperty Name="msgStatusDesc" ColumnName="msgStatusDesc" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypeUserRoles">
+            <EntityTypeMapping TypeName="VisitorAPPModel.TypeUserRole">
+              <MappingFragment StoreEntitySet="TypeUserRole">
+                <ScalarProperty Name="UserMenuAccess" ColumnName="UserMenuAccess" />
+                <ScalarProperty Name="UserRoleID" ColumnName="UserRoleID" />
+                <ScalarProperty Name="UserRoleDesc" ColumnName="UserRoleDesc" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InfoMessages">
+            <EntityTypeMapping TypeName="VisitorAPPModel.InfoMessage">
+              <MappingFragment StoreEntitySet="InfoMessage">
+                <ScalarProperty Name="Autotime" ColumnName="Autotime" />
+                <ScalarProperty Name="ResponseTime" ColumnName="ResponseTime" />
+                <ScalarProperty Name="ResponseString" ColumnName="ResponseString" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="msgStatusID" ColumnName="msgStatusID" />
+                <ScalarProperty Name="isUrgent" ColumnName="isUrgent" />
+                <ScalarProperty Name="VisitorMessage" ColumnName="VisitorMessage" />
+                <ScalarProperty Name="VisitorName" ColumnName="VisitorName" />
+                <ScalarProperty Name="msgTypeID" ColumnName="msgTypeID" />
+                <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+                <ScalarProperty Name="ToUserID" ColumnName="ToUserID" />
+                <ScalarProperty Name="FromUserID" ColumnName="FromUserID" />
+                <ScalarProperty Name="TodayID" ColumnName="TodayID" />
+                <ScalarProperty Name="msgID" ColumnName="msgID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BadgeDetails">
+            <EntityTypeMapping TypeName="VisitorAPPModel.BadgeDetail">
+              <MappingFragment StoreEntitySet="BadgeDetails">
+                <ScalarProperty Name="BadgeCount" ColumnName="BadgeCount" />
+                <ScalarProperty Name="LastCloseTime" ColumnName="LastCloseTime" />
+                <ScalarProperty Name="LastOpenTime" ColumnName="LastOpenTime" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SettingsForms">
+            <EntityTypeMapping TypeName="VisitorAPPModel.SettingsForm">
+              <MappingFragment StoreEntitySet="SettingsForm">
+                <ScalarProperty Name="Enable" ColumnName="Enable" />
+                <ScalarProperty Name="SettingsName" ColumnName="SettingsName" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="VisitorAPPDB" ZoomLevel="100">
+        <EntityTypeShape EntityType="VisitorAPPModel.InfoUser" Width="1.5" PointX="3" PointY="1.125" Height="3.5186979166666656" IsExpanded="true" />
+        <EntityTypeShape EntityType="VisitorAPPModel.TypeMsgContent" Width="1.5" PointX="3" PointY="5.375" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="VisitorAPPModel.TypeMsgStatu" Width="1.5" PointX="3" PointY="8" Height="1.7879850260416665" IsExpanded="true" />
+        <EntityTypeShape EntityType="VisitorAPPModel.TypeUserRole" Width="1.5" PointX="0.75" PointY="2" Height="1.7879850260416674" IsExpanded="true" />
+        <AssociationConnector Association="VisitorAPPModel.FK_InfoUser_TypeUserRole" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="2.9901432291666667" />
+          <ConnectorPoint PointX="3" PointY="2.9901432291666667" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="VisitorAPPModel.InfoMessage" Width="1.5" PointX="5" PointY="1.125" Height="3.9033007812499996" />
+        <AssociationConnector Association="VisitorAPPModel.FK_InfoUserFrom_InfoMessage" >
+          <ConnectorPoint PointX="4.5" PointY="2.8843489583333328" />
+          <ConnectorPoint PointX="5" PointY="2.8843489583333328" />
+        </AssociationConnector>
+        <AssociationConnector Association="VisitorAPPModel.FK_InfoUserTo_InfoMessage" >
+          <ConnectorPoint PointX="4.5" PointY="1.9421744791666664" />
+          <ConnectorPoint PointX="5" PointY="1.9421744791666664" />
+        </AssociationConnector>
+        <AssociationConnector Association="VisitorAPPModel.FK_TypeMsgContent_InfoMessage" >
+          <ConnectorPoint PointX="4.5" PointY="5.375" />
+          <ConnectorPoint PointX="5" PointY="5.02830078125" />
+        </AssociationConnector>
+        <AssociationConnector Association="VisitorAPPModel.FK_TypeMsgStatus_msgStatus" >
+          <ConnectorPoint PointX="4.5" PointY="8.8939925130208337" />
+          <ConnectorPoint PointX="5.7812525" PointY="8.8939925130208337" />
+          <ConnectorPoint PointX="5.7812525" PointY="5.02830078125" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="VisitorAPPModel.BadgeDetail" Width="1.5" PointX="7.125" PointY="0.75" />
+        <EntityTypeShape EntityType="VisitorAPPModel.SettingsForm" Width="1.5" PointX="7.75" PointY="4" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

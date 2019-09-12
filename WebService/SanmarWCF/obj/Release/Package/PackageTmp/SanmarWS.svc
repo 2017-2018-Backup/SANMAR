@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="SanmarWCF.SanmarWS" CodeBehind="SanmarWS.svc.cs" %>

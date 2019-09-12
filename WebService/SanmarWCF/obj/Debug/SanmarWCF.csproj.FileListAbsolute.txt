@@ -1,0 +1,6 @@
+D:\KKM\Visitor App\SanmarWebservice\SanmarWCF\bin\SanmarWCF.dll
+D:\KKM\Visitor App\SanmarWebservice\SanmarWCF\bin\SanmarWCF.pdb
+D:\KKM\Visitor App\SanmarWebservice\SanmarWCF\bin\VisitorAppointmentDB.dll
+D:\KKM\Visitor App\SanmarWebservice\SanmarWCF\bin\VisitorAppointmentDB.pdb
+D:\KKM\Visitor App\SanmarWebservice\SanmarWCF\obj\Debug\SanmarWCF.dll
+D:\KKM\Visitor App\SanmarWebservice\SanmarWCF\obj\Debug\SanmarWCF.pdb

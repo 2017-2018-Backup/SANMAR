@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A2DDD05D-19C7-4766-A217-29BCBAAF3D75}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VisitorAppointmentWebAPP</RootNamespace>
+    <AssemblyName>VisitorAppointmentWebAPP</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=3.0.30930.28736, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Entity.Design" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="common\css\AdminLTE.css" />
+    <Content Include="common\css\AdminLTE.min.css" />
+    <Content Include="common\css\blue.css" />
+    <Content Include="common\css\bootstrap.css" />
+    <Content Include="common\css\bootstrap.min.css" />
+    <Content Include="common\css\datepicker3.css" />
+    <Content Include="common\css\daterangepicker-bs3.css" />
+    <Content Include="common\css\jquery-jvectormap-1.2.2.css" />
+    <Content Include="common\css\select2.min.css" />
+    <Content Include="common\css\skins\skin-black-light.css" />
+    <Content Include="common\css\skins\skin-black-light.min.css" />
+    <Content Include="common\css\skins\skin-black.css" />
+    <Content Include="common\css\skins\skin-black.min.css" />
+    <Content Include="common\css\skins\skin-blue-light.css" />
+    <Content Include="common\css\skins\skin-blue-light.min.css" />
+    <Content Include="common\css\skins\skin-blue.css" />
+    <Content Include="common\css\skins\skin-blue.min.css" />
+    <Content Include="common\css\skins\skin-green-light.css" />
+    <Content Include="common\css\skins\skin-green-light.min.css" />
+    <Content Include="common\css\skins\skin-green.css" />
+    <Content Include="common\css\skins\skin-green.min.css" />
+    <Content Include="common\css\skins\skin-purple-light.css" />
+    <Content Include="common\css\skins\skin-purple-light.min.css" />
+    <Content Include="common\css\skins\skin-purple.css" />
+    <Content Include="common\css\skins\skin-purple.min.css" />
+    <Content Include="common\css\skins\skin-red-light.css" />
+    <Content Include="common\css\skins\skin-red-light.min.css" />
+    <Content Include="common\css\skins\skin-red.css" />
+    <Content Include="common\css\skins\skin-red.min.css" />
+    <Content Include="common\css\skins\skin-yellow-light.css" />
+    <Content Include="common\css\skins\skin-yellow-light.min.css" />
+    <Content Include="common\css\skins\skin-yellow.css" />
+    <Content Include="common\css\skins\skin-yellow.min.css" />
+    <Content Include="common\css\skins\_all-skins.css" />
+    <Content Include="common\css\skins\_all-skins.min.css" />
+    <Content Include="common\css\slider.css" />
+    <Content Include="common\fonts\font-awesome.min.css" />
+    <Content Include="common\fonts\fontawesome-webfont.svg" />
+    <Content Include="common\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="common\fonts\ionicons.min.css" />
+    <Content Include="common\img\blue%402x.png" />
+    <Content Include="common\img\blue.png" />
+    <Content Include="common\img\boxed-bg.jpg" />
+    <Content Include="common\img\boxed-bg.png" />
+    <Content Include="common\img\default-50x50.gif" />
+    <Content Include="common\img\excel-download-icon.gif" />
+    <Content Include="common\img\icons.png" />
+    <Content Include="common\img\Image1.jpg" />
+    <Content Include="common\img\marker.png" />
+    <Content Include="common\img\sampleMap.png" />
+    <Content Include="common\img\user2-160x160.jpg" />
+    <Content Include="common\img\user3-128x128.jpg" />
+    <Content Include="common\img\user4-128x128.jpg" />
+    <Content Include="common\js\app.js" />
+    <Content Include="common\js\app.min.js" />
+    <Content Include="common\js\bootstrap-datepicker.js" />
+    <Content Include="common\js\bootstrap-slider.js" />
+    <Content Include="common\js\bootstrap.js" />
+    <Content Include="common\js\bootstrap.min.js" />
+    <Content Include="common\js\daterangepicker.js" />
+    <Content Include="common\js\demo.js" />
+    <Content Include="common\js\fastclick.js" />
+    <Content Include="common\js\fastclick.min.js" />
+    <Content Include="common\js\icheck.js" />
+    <Content Include="common\js\icheck.min.js" />
+    <Content Include="common\js\jQuery-2.1.4.min.js" />
+    <Content Include="common\js\jquery-ui.js" />
+    <Content Include="common\js\jquery-ui.min.js" />
+    <Content Include="common\js\jquery.slimscroll.js" />
+    <Content Include="common\js\jquery.slimscroll.min.js" />
+    <Content Include="common\js\jquery.sparkline.js" />
+    <Content Include="common\js\jquery.sparkline.min.js" />
+    <Content Include="common\js\moment.min.js" />
+    <Content Include="common\js\select2.full.min.js" />
+    <Content Include="default.aspx" />
+    <Content Include="iAppointment\NewAppointment.aspx" />
+    <Content Include="iAppointment\Settings.aspx" />
+    <Content Include="iMembers\ChangePassword.aspx" />
+    <Content Include="iMembers\login.aspx" />
+    <Content Include="iMembers\userMaster.aspx" />
+    <Content Include="iReport\rpt_AppointStatus.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="iAppointment\NewAppointment.aspx.cs">
+      <DependentUpon>NewAppointment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="iAppointment\NewAppointment.aspx.designer.cs">
+      <DependentUpon>NewAppointment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="iAppointment\Settings.aspx.cs">
+      <DependentUpon>Settings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="iAppointment\Settings.aspx.designer.cs">
+      <DependentUpon>Settings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="iMembers\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="iMembers\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="iMembers\login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="iMembers\login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="iMembers\userMaster.aspx.cs">
+      <DependentUpon>userMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="iMembers\userMaster.aspx.designer.cs">
+      <DependentUpon>userMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="iReport\rpt_AppointStatus.aspx.cs">
+      <DependentUpon>rpt_AppointStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="iReport\rpt_AppointStatus.aspx.designer.cs">
+      <DependentUpon>rpt_AppointStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="master\admin.Master.cs">
+      <DependentUpon>admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="master\admin.Master.designer.cs">
+      <DependentUpon>admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Notification.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ChairmanAppDev.p12" />
+    <None Include="common\fonts\fontawesome-webfont.eot" />
+    <None Include="common\fonts\fontawesome-webfont.ttf" />
+    <None Include="common\fonts\fontawesome-webfont.woff" />
+    <None Include="common\fonts\fontawesome-webfont.woff2" />
+    <None Include="common\fonts\FontAwesome.otf" />
+    <None Include="common\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="common\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="common\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="common\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="master\admin.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JdSoft.Apple.Apns.Notifications\JdSoft.Apple.Apns.Notifications.csproj">
+      <Project>{4CFB9AA8-55F8-46DC-B7BD-9E18B9939110}</Project>
+      <Name>JdSoft.Apple.Apns.Notifications</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VisitorAppointmentDB\VisitorAppointmentDB.csproj">
+      <Project>{58DA9C98-313E-4E0E-B78B-389C4389CE20}</Project>
+      <Name>VisitorAppointmentDB</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49234</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

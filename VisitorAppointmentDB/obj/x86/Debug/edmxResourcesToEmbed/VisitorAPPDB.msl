@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="VisitorAPPModelStoreContainer" CdmEntityContainer="VisitorAPPEntities">
+    <EntitySetMapping Name="InfoUsers">
+      <EntityTypeMapping TypeName="VisitorAPPModel.InfoUser">
+        <MappingFragment StoreEntitySet="InfoUser">
+          <ScalarProperty Name="UID" ColumnName="UID" />
+          <ScalarProperty Name="UserRoleID" ColumnName="UserRoleID" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="SystemIDAddress" ColumnName="SystemIDAddress" />
+          <ScalarProperty Name="MobileIMENo" ColumnName="MobileIMENo" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypeMsgContents">
+      <EntityTypeMapping TypeName="VisitorAPPModel.TypeMsgContent">
+        <MappingFragment StoreEntitySet="TypeMsgContent">
+          <ScalarProperty Name="MsgTypeId" ColumnName="MsgTypeId" />
+          <ScalarProperty Name="MessageContent" ColumnName="MessageContent" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypeMsgStatus">
+      <EntityTypeMapping TypeName="VisitorAPPModel.TypeMsgStatu">
+        <MappingFragment StoreEntitySet="TypeMsgStatus">
+          <ScalarProperty Name="msgStatusID" ColumnName="msgStatusID" />
+          <ScalarProperty Name="msgStatusDesc" ColumnName="msgStatusDesc" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypeUserRoles">
+      <EntityTypeMapping TypeName="VisitorAPPModel.TypeUserRole">
+        <MappingFragment StoreEntitySet="TypeUserRole">
+          <ScalarProperty Name="UserMenuAccess" ColumnName="UserMenuAccess" />
+          <ScalarProperty Name="UserRoleID" ColumnName="UserRoleID" />
+          <ScalarProperty Name="UserRoleDesc" ColumnName="UserRoleDesc" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InfoMessages">
+      <EntityTypeMapping TypeName="VisitorAPPModel.InfoMessage">
+        <MappingFragment StoreEntitySet="InfoMessage">
+          <ScalarProperty Name="Autotime" ColumnName="Autotime" />
+          <ScalarProperty Name="ResponseTime" ColumnName="ResponseTime" />
+          <ScalarProperty Name="ResponseString" ColumnName="ResponseString" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="msgStatusID" ColumnName="msgStatusID" />
+          <ScalarProperty Name="isUrgent" ColumnName="isUrgent" />
+          <ScalarProperty Name="VisitorMessage" ColumnName="VisitorMessage" />
+          <ScalarProperty Name="VisitorName" ColumnName="VisitorName" />
+          <ScalarProperty Name="msgTypeID" ColumnName="msgTypeID" />
+          <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+          <ScalarProperty Name="ToUserID" ColumnName="ToUserID" />
+          <ScalarProperty Name="FromUserID" ColumnName="FromUserID" />
+          <ScalarProperty Name="TodayID" ColumnName="TodayID" />
+          <ScalarProperty Name="msgID" ColumnName="msgID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BadgeDetails">
+      <EntityTypeMapping TypeName="VisitorAPPModel.BadgeDetail">
+        <MappingFragment StoreEntitySet="BadgeDetails">
+          <ScalarProperty Name="BadgeCount" ColumnName="BadgeCount" />
+          <ScalarProperty Name="LastCloseTime" ColumnName="LastCloseTime" />
+          <ScalarProperty Name="LastOpenTime" ColumnName="LastOpenTime" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SettingsForms">
+      <EntityTypeMapping TypeName="VisitorAPPModel.SettingsForm">
+        <MappingFragment StoreEntitySet="SettingsForm">
+          <ScalarProperty Name="Enable" ColumnName="Enable" />
+          <ScalarProperty Name="SettingsName" ColumnName="SettingsName" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

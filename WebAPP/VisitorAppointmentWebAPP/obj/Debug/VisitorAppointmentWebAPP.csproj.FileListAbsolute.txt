@@ -1,0 +1,34 @@
+D:\Balu\Projects\KKM\VisitorManagement\Code\VisitorAppointmentWebAPP\bin\VisitorAppointmentWebAPP.dll
+D:\Balu\Projects\KKM\VisitorManagement\Code\VisitorAppointmentWebAPP\bin\VisitorAppointmentWebAPP.pdb
+D:\Balu\Projects\KKM\VisitorManagement\Code\VisitorAppointmentWebAPP\obj\Debug\VisitorAppointmentWebAPP.dll
+D:\Balu\Projects\KKM\VisitorManagement\Code\VisitorAppointmentWebAPP\obj\Debug\VisitorAppointmentWebAPP.pdb
+D:\Balu\Projects\KKM\VisitorManagement\Code\VisitorAppointmentWebAPP\bin\LiteDB.dll
+D:\Balu\Projects\KKM\VisitorManagement\Code\VisitorAppointmentWebAPP\bin\LiteDB.xml
+D:\Balu\Projects\KKM\VisitorManagement\Code\VisitorAppointmentWebAPP\obj\Debug\VisitorAppointmentWebAPP.csprojResolveAssemblyReference.cache
+D:\Balu\Projects\KKM\VisitorManagement\Code\VisitorAppointment\VisitorAppointmentWebAPP\bin\VisitorAppointmentWebAPP.dll
+D:\Balu\Projects\KKM\VisitorManagement\Code\VisitorAppointment\VisitorAppointmentWebAPP\bin\VisitorAppointmentWebAPP.pdb
+D:\Balu\Projects\KKM\VisitorManagement\Code\VisitorAppointment\VisitorAppointmentWebAPP\bin\VisitorAppointmentDB.dll
+D:\Balu\Projects\KKM\VisitorManagement\Code\VisitorAppointment\VisitorAppointmentWebAPP\bin\VisitorAppointmentDB.pdb
+D:\Balu\Projects\KKM\VisitorManagement\Code\VisitorAppointment\VisitorAppointmentWebAPP\obj\Debug\VisitorAppointmentWebAPP.csprojResolveAssemblyReference.cache
+D:\Balu\Projects\KKM\VisitorManagement\Code\VisitorAppointment\VisitorAppointmentWebAPP\obj\Debug\VisitorAppointmentWebAPP.dll
+D:\Balu\Projects\KKM\VisitorManagement\Code\VisitorAppointment\VisitorAppointmentWebAPP\obj\Debug\VisitorAppointmentWebAPP.pdb
+D:\KKM\Visitor App\VisitorAppointment Complete Code 07042017\VisitorAppointmentWebAPP\bin\VisitorAppointmentWebAPP.dll
+D:\KKM\Visitor App\VisitorAppointment Complete Code 07042017\VisitorAppointmentWebAPP\bin\VisitorAppointmentWebAPP.pdb
+D:\KKM\Visitor App\VisitorAppointment Complete Code 07042017\VisitorAppointmentWebAPP\bin\VisitorAppointmentDB.dll
+D:\KKM\Visitor App\VisitorAppointment Complete Code 07042017\VisitorAppointmentWebAPP\bin\VisitorAppointmentDB.pdb
+D:\KKM\Visitor App\VisitorAppointment Complete Code 07042017\VisitorAppointmentWebAPP\obj\Debug\VisitorAppointmentWebAPP.dll
+D:\KKM\Visitor App\VisitorAppointment Complete Code 07042017\VisitorAppointmentWebAPP\obj\Debug\VisitorAppointmentWebAPP.pdb
+D:\KKM\Visitor App\VisitorAppointment Complete Code 07042017\VisitorAppointmentWebAPP\obj\Debug\VisitorAppointmentWebAPP.csprojResolveAssemblyReference.cache
+D:\KKM\Visitor App\VisitorAppointment Complete Code 07042017\VisitorAppointmentWebAPP\bin\JdSoft.Apns.Notifications.dll
+D:\KKM\Visitor App\VisitorAppointment Complete Code 07042017\VisitorAppointmentWebAPP\bin\Newtonsoft.Json.Compact.dll
+D:\KKM\Visitor App\VisitorAppointment Complete Code 07042017\VisitorAppointmentWebAPP\bin\JdSoft.Apns.Notifications.pdb
+D:\BSK\SANMAR\VisitorAppointmentWebAPP-Source-11022018\VisitorAppointmentWebAPP\obj\Debug\VisitorAppointmentWebAPP.csprojResolveAssemblyReference.cache
+D:\BSK\SANMAR\VisitorAppointmentWebAPP-Source-11022018\VisitorAppointmentWebAPP\obj\Debug\VisitorAppointmentWebAPP.dll
+D:\BSK\SANMAR\VisitorAppointmentWebAPP-Source-11022018\VisitorAppointmentWebAPP\obj\Debug\VisitorAppointmentWebAPP.pdb
+D:\BSK\SANMAR\VisitorAppointmentWebAPP-Source-11022018\VisitorAppointmentWebAPP\bin\VisitorAppointmentWebAPP.dll.config
+D:\BSK\SANMAR\VisitorAppointmentWebAPP-Source-11022018\VisitorAppointmentWebAPP\bin\VisitorAppointmentWebAPP.dll
+D:\BSK\SANMAR\VisitorAppointmentWebAPP-Source-11022018\VisitorAppointmentWebAPP\bin\VisitorAppointmentWebAPP.pdb
+D:\BSK\SANMAR\VisitorAppointmentWebAPP-Source-11022018\VisitorAppointmentWebAPP\bin\JdSoft.Apns.Notifications.dll
+D:\BSK\SANMAR\VisitorAppointmentWebAPP-Source-11022018\VisitorAppointmentWebAPP\bin\Newtonsoft.Json.Compact.dll
+D:\BSK\SANMAR\VisitorAppointmentWebAPP-Source-11022018\VisitorAppointmentWebAPP\bin\JdSoft.Apns.Notifications.pdb
+D:\BSK\SANMAR\VisitorAppointmentWebAPP-Source-11022018\VisitorAppointmentWebAPP\bin\VisitorAppointmentDB.pdb

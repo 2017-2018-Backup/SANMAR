@@ -1,0 +1,6 @@
+D:\KKM\Visitor App\SanmarWebservice\SanmarWebservice\bin\SanmarWebservice.dll
+D:\KKM\Visitor App\SanmarWebservice\SanmarWebservice\bin\SanmarWebservice.pdb
+D:\KKM\Visitor App\SanmarWebservice\SanmarWebservice\obj\Release\SanmarWebservice.dll
+D:\KKM\Visitor App\SanmarWebservice\SanmarWebservice\obj\Release\SanmarWebservice.pdb
+D:\KKM\Visitor App\SanmarWebservice\SanmarWebservice\bin\VisitorAppointmentDB.dll
+D:\KKM\Visitor App\SanmarWebservice\SanmarWebservice\bin\VisitorAppointmentDB.pdb

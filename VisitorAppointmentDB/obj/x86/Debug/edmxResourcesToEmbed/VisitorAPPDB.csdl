@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VisitorAPPModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="VisitorAPPEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="InfoUsers" EntityType="VisitorAPPModel.InfoUser" />
+    <EntitySet Name="TypeMsgContents" EntityType="VisitorAPPModel.TypeMsgContent" />
+    <EntitySet Name="TypeMsgStatus" EntityType="VisitorAPPModel.TypeMsgStatu" />
+    <EntitySet Name="TypeUserRoles" EntityType="VisitorAPPModel.TypeUserRole" />
+    <AssociationSet Name="FK_InfoUser_TypeUserRole" Association="VisitorAPPModel.FK_InfoUser_TypeUserRole">
+      <End Role="TypeUserRole" EntitySet="TypeUserRoles" />
+      <End Role="InfoUser" EntitySet="InfoUsers" />
+    </AssociationSet>
+    <EntitySet Name="InfoMessages" EntityType="VisitorAPPModel.InfoMessage" />
+    <AssociationSet Name="FK_InfoUserFrom_InfoMessage" Association="VisitorAPPModel.FK_InfoUserFrom_InfoMessage">
+      <End Role="InfoUser" EntitySet="InfoUsers" />
+      <End Role="InfoMessage" EntitySet="InfoMessages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InfoUserTo_InfoMessage" Association="VisitorAPPModel.FK_InfoUserTo_InfoMessage">
+      <End Role="InfoUser" EntitySet="InfoUsers" />
+      <End Role="InfoMessage" EntitySet="InfoMessages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TypeMsgContent_InfoMessage" Association="VisitorAPPModel.FK_TypeMsgContent_InfoMessage">
+      <End Role="TypeMsgContent" EntitySet="TypeMsgContents" />
+      <End Role="InfoMessage" EntitySet="InfoMessages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TypeMsgStatus_msgStatus" Association="VisitorAPPModel.FK_TypeMsgStatus_msgStatus">
+      <End Role="TypeMsgStatu" EntitySet="TypeMsgStatus" />
+      <End Role="InfoMessage" EntitySet="InfoMessages" />
+    </AssociationSet>
+    <EntitySet Name="BadgeDetails" EntityType="VisitorAPPModel.BadgeDetail" />
+    <EntitySet Name="SettingsForms" EntityType="VisitorAPPModel.SettingsForm" />
+  </EntityContainer>
+  <EntityType Name="InfoUser">
+    <Key>
+      <PropertyRef Name="UID" />
+    </Key>
+    <Property Name="UID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserRoleID" Type="Byte" Nullable="false" />
+    <Property Name="Username" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="MobileNo" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="EmailID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="SystemIDAddress" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="MobileIMENo" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="isActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="TypeUserRole" Relationship="VisitorAPPModel.FK_InfoUser_TypeUserRole" FromRole="InfoUser" ToRole="TypeUserRole" />
+    <NavigationProperty Name="InfoMessages" Relationship="VisitorAPPModel.FK_InfoUserFrom_InfoMessage" FromRole="InfoUser" ToRole="InfoMessage" />
+    <NavigationProperty Name="InfoMessages1" Relationship="VisitorAPPModel.FK_InfoUserTo_InfoMessage" FromRole="InfoUser" ToRole="InfoMessage" />
+  </EntityType>
+  <EntityType Name="TypeMsgContent">
+    <Key>
+      <PropertyRef Name="MsgTypeId" />
+    </Key>
+    <Property Name="MsgTypeId" Type="Byte" Nullable="false" />
+    <Property Name="MessageContent" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="isActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="InfoMessages" Relationship="VisitorAPPModel.FK_TypeMsgContent_InfoMessage" FromRole="TypeMsgContent" ToRole="InfoMessage" />
+  </EntityType>
+  <EntityType Name="TypeMsgStatu">
+    <Key>
+      <PropertyRef Name="msgStatusID" />
+    </Key>
+    <Property Name="msgStatusID" Type="Byte" Nullable="false" />
+    <Property Name="msgStatusDesc" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="isActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="InfoMessages" Relationship="VisitorAPPModel.FK_TypeMsgStatus_msgStatus" FromRole="TypeMsgStatu" ToRole="InfoMessage" />
+  </EntityType>
+  <EntityType Name="TypeUserRole">
+    <Key>
+      <PropertyRef Name="UserRoleID" />
+    </Key>
+    <Property Name="UserRoleID" Type="Byte" Nullable="false" />
+    <Property Name="UserRoleDesc" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="isActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="InfoUsers" Relationship="VisitorAPPModel.FK_InfoUser_TypeUserRole" FromRole="TypeUserRole" ToRole="InfoUser" />
+    <Property Type="String" Name="UserMenuAccess" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_InfoUser_TypeUserRole">
+    <End Role="TypeUserRole" Type="VisitorAPPModel.TypeUserRole" Multiplicity="1" />
+    <End Role="InfoUser" Type="VisitorAPPModel.InfoUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeUserRole">
+        <PropertyRef Name="UserRoleID" />
+      </Principal>
+      <Dependent Role="InfoUser">
+        <PropertyRef Name="UserRoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="InfoMessage">
+    <Key>
+      <PropertyRef Name="msgID" />
+    </Key>
+    <Property Type="Int64" Name="msgID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="TodayID" />
+    <Property Type="Int32" Name="FromUserID" Nullable="false" />
+    <Property Type="Int32" Name="ToUserID" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedDateTime" Nullable="false" Precision="0" />
+    <Property Type="Byte" Name="msgTypeID" Nullable="false" />
+    <Property Type="String" Name="VisitorName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="VisitorMessage" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="isUrgent" Nullable="false" />
+    <Property Type="Byte" Name="msgStatusID" Nullable="false" />
+    <Property Type="Boolean" Name="isActive" Nullable="false" />
+    <NavigationProperty Name="InfoUser" Relationship="VisitorAPPModel.FK_InfoUserFrom_InfoMessage" FromRole="InfoMessage" ToRole="InfoUser" />
+    <NavigationProperty Name="InfoUser1" Relationship="VisitorAPPModel.FK_InfoUserTo_InfoMessage" FromRole="InfoMessage" ToRole="InfoUser" />
+    <NavigationProperty Name="TypeMsgContent" Relationship="VisitorAPPModel.FK_TypeMsgContent_InfoMessage" FromRole="InfoMessage" ToRole="TypeMsgContent" />
+    <NavigationProperty Name="TypeMsgStatu" Relationship="VisitorAPPModel.FK_TypeMsgStatus_msgStatus" FromRole="InfoMessage" ToRole="TypeMsgStatu" />
+    <Property Type="String" Name="ResponseString" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="ResponseTime" Precision="0" />
+    <Property Type="DateTime" Name="Autotime" Precision="0" />
+  </EntityType>
+  <Association Name="FK_InfoUserFrom_InfoMessage">
+    <End Type="VisitorAPPModel.InfoUser" Role="InfoUser" Multiplicity="1" />
+    <End Type="VisitorAPPModel.InfoMessage" Role="InfoMessage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InfoUser">
+        <PropertyRef Name="UID" />
+      </Principal>
+      <Dependent Role="InfoMessage">
+        <PropertyRef Name="FromUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InfoUserTo_InfoMessage">
+    <End Type="VisitorAPPModel.InfoUser" Role="InfoUser" Multiplicity="1" />
+    <End Type="VisitorAPPModel.InfoMessage" Role="InfoMessage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InfoUser">
+        <PropertyRef Name="UID" />
+      </Principal>
+      <Dependent Role="InfoMessage">
+        <PropertyRef Name="ToUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TypeMsgContent_InfoMessage">
+    <End Type="VisitorAPPModel.TypeMsgContent" Role="TypeMsgContent" Multiplicity="1" />
+    <End Type="VisitorAPPModel.InfoMessage" Role="InfoMessage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeMsgContent">
+        <PropertyRef Name="MsgTypeId" />
+      </Principal>
+      <Dependent Role="InfoMessage">
+        <PropertyRef Name="msgTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TypeMsgStatus_msgStatus">
+    <End Type="VisitorAPPModel.TypeMsgStatu" Role="TypeMsgStatu" Multiplicity="1" />
+    <End Type="VisitorAPPModel.InfoMessage" Role="InfoMessage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeMsgStatu">
+        <PropertyRef Name="msgStatusID" />
+      </Principal>
+      <Dependent Role="InfoMessage">
+        <PropertyRef Name="msgStatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="BadgeDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="UserID" />
+    <Property Type="DateTime" Name="LastOpenTime" Precision="3" />
+    <Property Type="DateTime" Name="LastCloseTime" Precision="3" />
+    <Property Type="Int32" Name="BadgeCount" />
+  </EntityType>
+  <EntityType Name="SettingsForm">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="UserID" />
+    <Property Type="String" Name="SettingsName" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Enable" />
+  </EntityType>
+</Schema>
